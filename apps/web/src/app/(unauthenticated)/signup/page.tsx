@@ -38,8 +38,8 @@ export default function SignUpPage({ searchParams }: SignUpPageProps) {
       <h1 className="text-4xl font-semibold">Crea tu nueva cuenta</h1>
 
       <p className="text-muted-foreground/60 mt-2 text-sm">
-        Crea tu cuenta y comienza a firmar electrónicamente tus documentos con el poder
-        de Design Signature
+        Crea tu cuenta y comienza a firmar electrónicamente tus documentos con el poder de Design
+        Signature
       </p>
 
       <SignUpForm

@@ -34,11 +34,14 @@ import { PasswordInput } from '@documenso/ui/primitives/password-input';
 import { useToast } from '@documenso/ui/primitives/use-toast';
 
 const ERROR_MESSAGES: Partial<Record<keyof typeof ErrorCode, string>> = {
-  [ErrorCode.CREDENTIALS_NOT_FOUND]: 'El correo electrónico o la contraseña proporcionada son incorrectos',
-  [ErrorCode.INCORRECT_EMAIL_PASSWORD]: 'El correo electrónico o la contraseña proporcionada son incorrectos',
+  [ErrorCode.CREDENTIALS_NOT_FOUND]:
+    'El correo electrónico o la contraseña proporcionada son incorrectos',
+  [ErrorCode.INCORRECT_EMAIL_PASSWORD]:
+    'El correo electrónico o la contraseña proporcionada son incorrectos',
   [ErrorCode.USER_MISSING_PASSWORD]:
     'Esta cuenta parece estar usando un método de inicio de sesión social, inicie sesión usando ese método',
-  [ErrorCode.INCORRECT_TWO_FACTOR_CODE]: 'El código de autenticación de dos factores proporcionado es incorrecto',
+  [ErrorCode.INCORRECT_TWO_FACTOR_CODE]:
+    'El código de autenticación de dos factores proporcionado es incorrecto',
   [ErrorCode.INCORRECT_TWO_FACTOR_BACKUP_CODE]: 'El código de respaldo proporcionado es incorrecto',
   [ErrorCode.UNVERIFIED_EMAIL]:
     'Esta cuenta no ha sido verificada. Verifique su cuenta antes de iniciar sesión.',
