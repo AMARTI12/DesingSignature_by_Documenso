@@ -31,10 +31,10 @@ const SIGN_UP_REDIRECT_PATH = '/documents';
 
 export const ZSignUpFormSchema = z
   .object({
-    name: z.string().trim().min(1, { message: 'Please enter a valid name.' }),
+    name: z.string().trim().min(1, { message: 'Por favor ingrese un nombre valido.' }),
     email: z.string().email().min(1),
     password: ZPasswordSchema,
-    signature: z.string().min(1, { message: 'We need your signature to sign documents' }),
+    signature: z.string().min(1, { message: 'Necesitamos su firma para firmar documentos' }),
   })
   .refine(
     (data) => {
@@ -42,7 +42,7 @@ export const ZSignUpFormSchema = z
       return !password.includes(name) && !password.includes(email.split('@')[0]);
     },
     {
-      message: 'Password should not be common or based on personal information',
+      message: 'La contraseña no debe ser común ni estar basada en información personal.',
     },
   );
 
@@ -80,9 +80,9 @@ export const SignUpForm = ({ className, initialEmail, isGoogleSSOEnabled }: Sign
       router.push(`/unverified-account`);
 
       toast({
-        title: 'Registration Successful',
+        title: 'Registro Exitoso',
         description:
-          'You have successfully registered. Please verify your account by clicking on the link you received in the email.',
+          'Se ha registrado exitosamente. Verifique su cuenta haciendo clic en el enlace que recibió en el correo electrónico.',
         duration: 5000,
       });
 
@@ -93,15 +93,15 @@ export const SignUpForm = ({ className, initialEmail, isGoogleSSOEnabled }: Sign
     } catch (err) {
       if (err instanceof TRPCClientError && err.data?.code === 'BAD_REQUEST') {
         toast({
-          title: 'An error occurred',
+          title: 'Ocurrio un error',
           description: err.message,
           variant: 'destructive',
         });
       } else {
         toast({
-          title: 'An unknown error occurred',
+          title: 'Un error desconocido ocurrió',
           description:
-            'We encountered an unknown error while attempting to sign you up. Please try again later.',
+            'Encontramos un error desconocido al intentar registrarte. Por favor, inténtelo de nuevo más tarde.',
           variant: 'destructive',
         });
       }
@@ -113,9 +113,9 @@ export const SignUpForm = ({ className, initialEmail, isGoogleSSOEnabled }: Sign
       await signIn('google', { callbackUrl: SIGN_UP_REDIRECT_PATH });
     } catch (err) {
       toast({
-        title: 'An unknown error occurred',
+        title: 'Un error desconocido ocurrió',
         description:
-          'We encountered an unknown error while attempting to sign you Up. Please try again later.',
+          'Encontramos un error desconocido al intentar registrarte. Por favor, inténtelo de nuevo más tarde.',
         variant: 'destructive',
       });
     }
@@ -133,7 +133,7 @@ export const SignUpForm = ({ className, initialEmail, isGoogleSSOEnabled }: Sign
             name="name"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Name</FormLabel>
+                <FormLabel>Nombre Completo</FormLabel>
                 <FormControl>
                   <Input type="text" {...field} />
                 </FormControl>
@@ -161,7 +161,7 @@ export const SignUpForm = ({ className, initialEmail, isGoogleSSOEnabled }: Sign
             name="password"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Password</FormLabel>
+                <FormLabel>Contraseña</FormLabel>
                 <FormControl>
                   <PasswordInput {...field} />
                 </FormControl>
@@ -175,7 +175,7 @@ export const SignUpForm = ({ className, initialEmail, isGoogleSSOEnabled }: Sign
             name="signature"
             render={({ field: { onChange } }) => (
               <FormItem>
-                <FormLabel>Sign Here</FormLabel>
+                <FormLabel>Firme Aquí</FormLabel>
                 <FormControl>
                   <SignaturePad
                     className="h-36 w-full"
@@ -197,14 +197,14 @@ export const SignUpForm = ({ className, initialEmail, isGoogleSSOEnabled }: Sign
           loading={isSubmitting}
           className="dark:bg-documenso dark:hover:opacity-90"
         >
-          {isSubmitting ? 'Signing up...' : 'Sign Up'}
+          {isSubmitting ? 'Registrandome...' : 'Registrarme'}
         </Button>
 
         {isGoogleSSOEnabled && (
           <>
             <div className="relative flex items-center justify-center gap-x-4 py-2 text-xs uppercase">
               <div className="bg-border h-px flex-1" />
-              <span className="text-muted-foreground bg-transparent">Or</span>
+              <span className="text-muted-foreground bg-transparent">O</span>
               <div className="bg-border h-px flex-1" />
             </div>
 
@@ -217,7 +217,7 @@ export const SignUpForm = ({ className, initialEmail, isGoogleSSOEnabled }: Sign
               onClick={onSignUpWithGoogleClick}
             >
               <FcGoogle className="mr-2 h-5 w-5" />
-              Sign Up with Google
+              Registrese con Google
             </Button>
           </>
         )}

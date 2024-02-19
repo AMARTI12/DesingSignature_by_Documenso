@@ -31,10 +31,10 @@ export default function SignInPage({ searchParams }: SignInPageProps) {
 
   return (
     <div>
-      <h1 className="text-4xl font-semibold">Sign in to your account</h1>
+      <h1 className="text-4xl font-semibold">Ingresa con tu cuenta</h1>
 
       <p className="text-muted-foreground/60 mt-2 text-sm">
-        Welcome back, we are lucky to have you.
+        Bienvenido, que bueno tenerte de nuevo.
       </p>
 
       <SignInForm
@@ -45,9 +45,9 @@ export default function SignInPage({ searchParams }: SignInPageProps) {
 
       {NEXT_PUBLIC_DISABLE_SIGNUP !== 'true' && (
         <p className="text-muted-foreground mt-6 text-center text-sm">
-          Don't have an account?{' '}
+          ¿No tienes una cuenta?{' '}
           <Link href="/signup" className="text-primary duration-200 hover:opacity-70">
-            Sign up
+            Registrate
           </Link>
         </p>
       )}
@@ -57,7 +57,7 @@ export default function SignInPage({ searchParams }: SignInPageProps) {
           href="/forgot-password"
           className="text-muted-foreground text-sm duration-200 hover:opacity-70"
         >
-          Forgot your password?
+          ¿Olvidaste tu contraseña?
         </Link>
       </p>
     </div>

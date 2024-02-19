@@ -9,15 +9,15 @@ export default function UnverifiedAccount() {
         <Mails className="text-primary h-10 w-10" strokeWidth={2} />
       </div>
       <div className="">
-        <h2 className="text-2xl font-bold md:text-4xl">Confirm email</h2>
+        <h2 className="text-2xl font-bold md:text-4xl">Confirmar correo electrónico</h2>
 
         <p className="text-muted-foreground mt-4">
-          To gain access to your account, please confirm your email address by clicking on the
-          confirmation link from your inbox.
+        Para obtener acceso a su cuenta, confirme su dirección de correo electrónico haciendo clic en el 
+        enlace de confirmación desde su bandeja de entrada.
         </p>
 
         <p className="text-muted-foreground mt-4">
-          If you don't find the confirmation link in your inbox, you can request a new one below.
+        Si no encuentra el enlace de confirmación en su bandeja de entrada, puede solicitar uno nuevo a continuación.
         </p>
 
         <SendConfirmationEmailForm />

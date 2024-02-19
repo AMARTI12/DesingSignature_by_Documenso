@@ -17,7 +17,7 @@ export const authRouter = router({
       if (NEXT_PUBLIC_DISABLE_SIGNUP() === 'true') {
         throw new TRPCError({
           code: 'BAD_REQUEST',
-          message: 'Signups are disabled.',
+          message: 'Los registros están deshabilitados.',
         });
       }
 
@@ -30,10 +30,10 @@ export const authRouter = router({
       return user;
     } catch (err) {
       let message =
-        'We were unable to create your account. Please review the information you provided and try again.';
+        'No pudimos crear su cuenta. Revise la información que proporcionó y vuelva a intentarlo.';
 
-      if (err instanceof Error && err.message === 'User already exists') {
-        message = 'User with this email already exists. Please use a different email address.';
+      if (err instanceof Error && err.message === 'El usuario ya existe') {
+        message = 'El usuario con este correo electrónico ya existe. Por favor utilice una dirección de correo electrónico diferente.';
       }
 
       throw new TRPCError({

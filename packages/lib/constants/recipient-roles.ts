@@ -4,8 +4,8 @@ export const RECIPIENT_ROLES_DESCRIPTION: {
   [key in RecipientRole]: { actionVerb: string; progressiveVerb: string; roleName: string };
 } = {
   [RecipientRole.APPROVER]: {
-    actionVerb: 'Approve',
-    progressiveVerb: 'Approving',
+    actionVerb: 'Aprovar',
+    progressiveVerb: 'Aprovando',
     roleName: 'Approver',
   },
   [RecipientRole.CC]: {
@@ -14,13 +14,13 @@ export const RECIPIENT_ROLES_DESCRIPTION: {
     roleName: 'CC',
   },
   [RecipientRole.SIGNER]: {
-    actionVerb: 'Sign',
-    progressiveVerb: 'Signing',
+    actionVerb: 'Firmar',
+    progressiveVerb: 'Firmando',
     roleName: 'Signer',
   },
   [RecipientRole.VIEWER]: {
-    actionVerb: 'View',
-    progressiveVerb: 'Viewing',
+    actionVerb: 'Revisar',
+    progressiveVerb: 'Revisando',
     roleName: 'Viewer',
   },
 };

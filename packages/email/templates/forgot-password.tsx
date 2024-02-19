@@ -11,7 +11,7 @@ export const ForgotPasswordTemplate = ({
   resetPasswordLink = 'https://documenso.com',
   assetBaseUrl = 'http://localhost:3002',
 }: ForgotPasswordTemplateProps) => {
-  const previewText = `Password Reset Requested`;
+  const previewText = `Restablecimiento de contraseña solicitado`;
 
   const getAssetUrl = (path: string) => {
     return new URL(path, assetBaseUrl).toString();
