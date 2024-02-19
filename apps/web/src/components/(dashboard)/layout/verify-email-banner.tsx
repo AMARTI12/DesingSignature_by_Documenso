@@ -100,11 +100,10 @@ export const VerifyEmailBanner = ({ email }: VerifyEmailBannerProps) => {
 
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <DialogContent>
-          <DialogTitle>Verify your email address</DialogTitle>
+          <DialogTitle>Verifique su dirección de correo electrónico</DialogTitle>
 
           <DialogDescription>
-            We've sent a confirmation email to <strong>{email}</strong>. Please check your inbox and
-            click the link in the email to verify your account.
+          Hemos enviado un correo electrónico de confirmación a <strong>{email}</strong>. Revise su bandeja de entrada y haga clic en el enlace del correo electrónico para verificar su cuenta.
           </DialogDescription>
 
           <div>
@@ -113,7 +112,7 @@ export const VerifyEmailBanner = ({ email }: VerifyEmailBannerProps) => {
               loading={isLoading}
               onClick={onResendConfirmationEmail}
             >
-              {isLoading ? 'Sending...' : 'Resend Confirmation Email'}
+              {isLoading ? 'Enviando...' : 'Reenviar Email de confirmación'}
             </Button>
           </div>
         </DialogContent>

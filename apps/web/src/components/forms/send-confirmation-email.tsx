@@ -75,7 +75,7 @@ export const SendConfirmationEmailForm = ({ className }: SendConfirmationEmailFo
             name="email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Email address</FormLabel>
+                <FormLabel>Email</FormLabel>
                 <FormControl>
                   <Input type="email" {...field} />
                 </FormControl>
@@ -86,7 +86,7 @@ export const SendConfirmationEmailForm = ({ className }: SendConfirmationEmailFo
           <FormMessage />
 
           <Button size="lg" type="submit" disabled={isSubmitting} loading={isSubmitting}>
-            Send confirmation email
+            Enviar Email de Confirmación
           </Button>
         </fieldset>
       </form>
