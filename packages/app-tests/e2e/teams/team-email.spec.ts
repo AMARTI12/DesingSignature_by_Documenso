@@ -28,7 +28,7 @@ test('[TEAMS]: send team email request', async ({ page }) => {
   await expect(
     page
       .getByRole('status')
-      .filter({ hasText: 'We have sent a confirmation email for verification.' })
+      .filter({ hasText: 'Hemos enviado un correo electrónico de confirmación para su verificación.' })
       .first(),
   ).toBeVisible();
 

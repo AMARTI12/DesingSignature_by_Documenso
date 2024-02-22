@@ -37,8 +37,8 @@ export const VerifyEmailBanner = ({ email }: VerifyEmailBannerProps) => {
       await sendConfirmationEmail({ email: email });
 
       toast({
-        title: 'Success',
-        description: 'Verification email sent successfully.',
+        title: 'Correcto',
+        description: 'Correo electrónico de verificación enviado correctamente.',
       });
 
       setIsOpen(false);
@@ -48,7 +48,7 @@ export const VerifyEmailBanner = ({ email }: VerifyEmailBannerProps) => {
 
       toast({
         title: 'Error',
-        description: 'Something went wrong while sending the confirmation email.',
+        description: 'Algo salió mal al enviar el correo electrónico de confirmación.',
         variant: 'destructive',
       });
     }
@@ -81,7 +81,7 @@ export const VerifyEmailBanner = ({ email }: VerifyEmailBannerProps) => {
         <div className="mx-auto flex max-w-screen-xl items-center justify-center gap-x-4 px-4 py-2 text-sm font-medium text-yellow-900">
           <div className="flex items-center">
             <AlertTriangle className="mr-2.5 h-5 w-5" />
-            Verify your email address to unlock all features.
+            Verifique su dirección de correo electrónico para desbloquear todas las funciones.
           </div>
 
           <div>

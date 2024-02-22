@@ -47,17 +47,17 @@ export const SendConfirmationEmailForm = ({ className }: SendConfirmationEmailFo
       await sendConfirmationEmail({ email });
 
       toast({
-        title: 'Confirmation email sent',
+        title: 'Correo de Confirmación Mandado',
         description:
-          'A confirmation email has been sent, and it should arrive in your inbox shortly.',
+          'Se ha enviado un correo electrónico de confirmación y debería llegar a su bandeja de entrada en breve.',
         duration: 5000,
       });
 
       form.reset();
     } catch (err) {
       toast({
-        title: 'An error occurred while sending your confirmation email',
-        description: 'Please try again and make sure you enter the correct email address.',
+        title: 'Se produjo un error al enviar su correo electrónico de confirmación.',
+        description: 'Inténtelo de nuevo y asegúrese de ingresar la dirección de correo electrónico correcta.',
         variant: 'destructive',
       });
     }

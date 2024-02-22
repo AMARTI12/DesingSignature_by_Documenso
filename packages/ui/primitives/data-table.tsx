@@ -125,7 +125,7 @@ export function DataTable<TData, TValue>({
               <TableRow>
                 {error.component ?? (
                   <TableCell colSpan={columns.length} className="h-32 text-center">
-                    Something went wrong.
+                    Algo salió mal.
                   </TableCell>
                 )}
               </TableRow>
@@ -136,14 +136,14 @@ export function DataTable<TData, TValue>({
             ) : (
               <TableRow>
                 <TableCell colSpan={columns.length} className="h-32 text-center">
-                  <p>No results found</p>
+                  <p>No se han encontrado resultados</p>
 
                   {hasFilters && onClearFilters !== undefined && (
                     <button
                       onClick={() => onClearFilters()}
                       className="text-foreground mt-1 text-sm"
                     >
-                      Clear filters
+                      Limpiar filtros
                     </button>
                   )}
                 </TableCell>

@@ -21,8 +21,8 @@ export default async function SecuritySettingsPage() {
   return (
     <div>
       <SettingsHeader
-        title="Security"
-        subtitle="Here you can manage your password and security settings."
+        title="Seguridad"
+        subtitle="Aquí puede administrar su contraseña y configuración de seguridad."
       />
 
       {user.identityProvider === 'DOCUMENSO' ? (
@@ -36,11 +36,11 @@ export default async function SecuritySettingsPage() {
             variant="neutral"
           >
             <div className="mb-4 sm:mb-0">
-              <AlertTitle>Two factor authentication</AlertTitle>
+              <AlertTitle>Autenticación de dos factores</AlertTitle>
 
               <AlertDescription className="mr-4">
-                Create one-time passwords that serve as a secondary authentication method for
-                confirming your identity when requested during the sign-in process.
+              Cree contraseñas de un solo uso que sirvan como método de autenticación secundario
+               para confirmar su identidad cuando se le solicite durante el proceso de inicio de sesión.
               </AlertDescription>
             </div>
 
@@ -53,11 +53,11 @@ export default async function SecuritySettingsPage() {
               variant="neutral"
             >
               <div className="mb-4 sm:mb-0">
-                <AlertTitle>Recovery codes</AlertTitle>
+                <AlertTitle>Códigos de recuperación</AlertTitle>
 
                 <AlertDescription className="mr-4">
-                  Two factor authentication recovery codes are used to access your account in the
-                  event that you lose access to your authenticator app.
+                Los códigos de recuperación de autenticación de dos factores se utilizan para acceder
+                 a su cuenta en caso de que pierda el acceso a su aplicación de autenticación.
                 </AlertDescription>
               </div>
 
@@ -68,13 +68,12 @@ export default async function SecuritySettingsPage() {
       ) : (
         <Alert className="p-6" variant="neutral">
           <AlertTitle>
-            Your account is managed by {IDENTITY_PROVIDER_NAME[user.identityProvider]}
+          Su cuenta es administrada por {IDENTITY_PROVIDER_NAME[user.identityProvider]}
           </AlertTitle>
 
           <AlertDescription>
-            To update your password, enable two-factor authentication, and manage other security
-            settings, please go to your {IDENTITY_PROVIDER_NAME[user.identityProvider]} account
-            settings.
+          Para actualizar su contraseña, habilitar la autenticación de dos factores y administrar otras configuraciones de seguridad, 
+          vaya a las configuraciones de seguridad de {IDENTITY_PROVIDER_NAME[user.identityProvider]}
           </AlertDescription>
         </Alert>
       )}
@@ -84,15 +83,15 @@ export default async function SecuritySettingsPage() {
         variant="neutral"
       >
         <div className="mb-4 mr-4 sm:mb-0">
-          <AlertTitle>Recent activity</AlertTitle>
+          <AlertTitle>Actividad reciente</AlertTitle>
 
           <AlertDescription className="mr-2">
-            View all recent security activity related to your account.
+          Vea toda la actividad de seguridad reciente relacionada con su cuenta.
           </AlertDescription>
         </div>
 
         <Button asChild>
-          <Link href="/settings/security/activity">View activity</Link>
+          <Link href="/settings/security/activity">Ver actividad</Link>
         </Button>
       </Alert>
     </div>

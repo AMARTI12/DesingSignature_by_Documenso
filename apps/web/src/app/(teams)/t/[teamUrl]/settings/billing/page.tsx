@@ -48,13 +48,13 @@ export default async function TeamsSettingBillingPage({ params }: TeamsSettingsB
 
   return (
     <div>
-      <SettingsHeader title="Billing" subtitle="Your subscription is currently active." />
+      <SettingsHeader title="Facturación" subtitle="Su suscripción está actualmente activa." />
 
       <Card gradient className="shadow-sm">
         <CardContent className="flex flex-row items-center justify-between p-4">
           <div className="flex flex-col text-sm">
             <p className="text-foreground font-semibold">
-              Current plan: {teamSubscription ? 'Team' : 'Community Team'}
+            Plan actual: {teamSubscription ? 'Team' : 'Community Team'}
             </p>
 
             <p className="text-muted-foreground mt-0.5">

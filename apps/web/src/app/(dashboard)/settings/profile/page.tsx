@@ -14,7 +14,7 @@ export default async function ProfileSettingsPage() {
 
   return (
     <div>
-      <SettingsHeader title="Profile" subtitle="Here you can edit your personal details." />
+      <SettingsHeader title="Perfil" subtitle="Aquí puede editar sus datos personales." />
 
       <ProfileForm user={user} className="max-w-xl" />
     </div>

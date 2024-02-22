@@ -57,7 +57,7 @@ export const CurrentUserTeamsDataTable = () => {
     <DataTable
       columns={[
         {
-          header: 'Team',
+          header: 'Equipo',
           accessorKey: 'name',
           cell: ({ row }) => (
             <Link href={`/t/${row.original.url}`} scroll={false}>
@@ -73,7 +73,7 @@ export const CurrentUserTeamsDataTable = () => {
           ),
         },
         {
-          header: 'Role',
+          header: 'Rol',
           accessorKey: 'role',
           cell: ({ row }) =>
             row.original.ownerUserId === row.original.currentTeamMember.userId
@@ -81,7 +81,7 @@ export const CurrentUserTeamsDataTable = () => {
               : TEAM_MEMBER_ROLE_MAP[row.original.currentTeamMember.role],
         },
         {
-          header: 'Member Since',
+          header: 'Miembro desde',
           accessorKey: 'createdAt',
           cell: ({ row }) => <LocaleDate date={row.original.createdAt} />,
         },
@@ -91,7 +91,7 @@ export const CurrentUserTeamsDataTable = () => {
             <div className="flex justify-end space-x-2">
               {canExecuteTeamAction('MANAGE_TEAM', row.original.currentTeamMember.role) && (
                 <Button variant="outline" asChild>
-                  <Link href={`/t/${row.original.url}/settings`}>Manage</Link>
+                  <Link href={`/t/${row.original.url}/settings`}>Gestionar</Link>
                 </Button>
               )}
 
@@ -105,7 +105,7 @@ export const CurrentUserTeamsDataTable = () => {
                     disabled={row.original.ownerUserId === row.original.currentTeamMember.userId}
                     onSelect={(e) => e.preventDefault()}
                   >
-                    Leave
+                    Salir
                   </Button>
                 }
               />
