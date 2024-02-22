@@ -50,7 +50,7 @@ export default function NotFound() {
               }}
             >
               <ChevronLeft className="mr-2 h-4 w-4" />
-              Go Back
+              Ir atras
             </Button>
 
             <Button className="w-32" asChild>

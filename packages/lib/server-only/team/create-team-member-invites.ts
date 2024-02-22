@@ -154,7 +154,7 @@ export const sendTeamMemberInviteEmail = async ({
       name: FROM_NAME,
       address: FROM_ADDRESS,
     },
-    subject: `You have been invited to join ${emailTemplateOptions.teamName} on Documenso`,
+    subject: `Has sido invitado a unirte ${emailTemplateOptions.teamName} en Design Signature`,
     html: render(template),
     text: render(template, { plainText: true }),
   });

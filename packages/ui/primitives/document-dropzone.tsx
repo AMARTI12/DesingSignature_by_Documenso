@@ -78,10 +78,10 @@ const DocumentDropzoneCardCenterVariants: Variants = {
 
 const DocumentDescription = {
   document: {
-    headline: 'Add a document',
+    headline: 'Agregar un documento',
   },
   template: {
-    headline: 'Upload Template Document',
+    headline: 'Subir una plantilla de documento',
   },
 };
 
@@ -100,7 +100,7 @@ export const DocumentDropzone = ({
   onDrop,
   onDropRejected,
   disabled,
-  disabledMessage = 'You cannot upload documents at this time.',
+  disabledMessage = 'No puede cargar documentos en este momento.',
   type = 'document',
   ...props
 }: DocumentDropzoneProps) => {
@@ -183,7 +183,7 @@ export const DocumentDropzone = ({
           </p>
 
           <p className="text-muted-foreground/80 mt-1 text-sm">
-            {disabled ? disabledMessage : 'Drag & drop your PDF here.'}
+            {disabled ? disabledMessage : 'Arrastra y suelta tu PDF aquí.'}
           </p>
         </CardContent>
       </Card>

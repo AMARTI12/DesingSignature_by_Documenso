@@ -482,7 +482,7 @@ export const AddFieldsFormPartial = ({
                       {selectedSigner?.name || 'Signature'}
                     </p>
 
-                    <p className="text-muted-foreground mt-2 text-center text-xs">Signature</p>
+                    <p className="text-muted-foreground mt-2 text-center text-xs">Firma</p>
                   </CardContent>
                 </Card>
               </button>
@@ -526,7 +526,7 @@ export const AddFieldsFormPartial = ({
                       {'Name'}
                     </p>
 
-                    <p className="text-muted-foreground mt-2 text-xs">Name</p>
+                    <p className="text-muted-foreground mt-2 text-xs">Nombre</p>
                   </CardContent>
                 </Card>
               </button>
@@ -548,7 +548,7 @@ export const AddFieldsFormPartial = ({
                       {'Date'}
                     </p>
 
-                    <p className="text-muted-foreground mt-2 text-xs">Date</p>
+                    <p className="text-muted-foreground mt-2 text-xs">Fecha</p>
                   </CardContent>
                 </Card>
               </button>

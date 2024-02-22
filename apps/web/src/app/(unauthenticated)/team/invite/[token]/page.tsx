@@ -30,14 +30,14 @@ export default async function AcceptInvitationPage({
   if (!teamMemberInvite) {
     return (
       <div>
-        <h1 className="text-4xl font-semibold">Invalid token</h1>
+        <h1 className="text-4xl font-semibold">Token no valido</h1>
 
         <p className="text-muted-foreground mb-4 mt-2 text-sm">
-          This token is invalid or has expired. Please contact your team for a new invitation.
+        Este token no es válido o ha caducado. Comuníquese con su equipo para recibir una nueva invitación.
         </p>
 
         <Button asChild>
-          <Link href="/">Return</Link>
+          <Link href="/">Volver</Link>
         </Button>
       </div>
     );
@@ -80,18 +80,18 @@ export default async function AcceptInvitationPage({
   if (!user) {
     return (
       <div>
-        <h1 className="text-4xl font-semibold">Team invitation</h1>
+        <h1 className="text-4xl font-semibold">Invitación de equipo</h1>
 
         <p className="text-muted-foreground mt-2 text-sm">
-          You have been invited by <strong>{team.name}</strong> to join their team.
+        Has sido invitado por <strong>{team.name}</strong> para unirse a su equipo.
         </p>
 
         <p className="text-muted-foreground mb-4 mt-1 text-sm">
-          To accept this invitation you must create an account.
+        Para aceptar esta invitación debes crear una cuenta.
         </p>
 
         <Button asChild>
-          <Link href={`/signup?email=${encodeURIComponent(email)}`}>Create account</Link>
+          <Link href={`/signup?email=${encodeURIComponent(email)}`}>Crear una cuenta</Link>
         </Button>
       </div>
     );
@@ -101,10 +101,10 @@ export default async function AcceptInvitationPage({
 
   return (
     <div>
-      <h1 className="text-4xl font-semibold">Invitation accepted!</h1>
+      <h1 className="text-4xl font-semibold">¡Invitación aceptada!</h1>
 
       <p className="text-muted-foreground mb-4 mt-2 text-sm">
-        You have accepted an invitation from <strong>{team.name}</strong> to join their team.
+      Has aceptado una invitación de <strong>{team.name}</strong> para unirse a su equipo.
       </p>
 
       {isSessionUserTheInvitedUser ? (
@@ -113,7 +113,7 @@ export default async function AcceptInvitationPage({
         </Button>
       ) : (
         <Button asChild>
-          <Link href={`/signin?email=${encodeURIComponent(email)}`}>Continue to login</Link>
+          <Link href={`/signin?email=${encodeURIComponent(email)}`}>Continuar al login</Link>
         </Button>
       )}
     </div>

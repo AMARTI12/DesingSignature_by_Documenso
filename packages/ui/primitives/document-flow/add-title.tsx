@@ -67,7 +67,7 @@ export const AddTitleFormPartial = ({
           <div className="flex flex-col gap-y-4">
             <div>
               <Label htmlFor="title">
-                Title<span className="text-destructive ml-1 inline-block font-medium">*</span>
+                Titulo<span className="text-destructive ml-1 inline-block font-medium">*</span>
               </Label>
 
               <Input
