@@ -30,16 +30,15 @@ export const SendDocumentActionDialog = ({
       <DialogTrigger asChild>
         <Button type="button" className={className}>
           {loading && <Loader className="text-documenso mr-2 h-5 w-5 animate-spin" />}
-          Send
+          Enviar
         </Button>
       </DialogTrigger>
 
       <DialogContent className="max-w-md">
         <DialogHeader>
-          <DialogTitle className="text-center text-lg font-semibold">Send Document</DialogTitle>
+          <DialogTitle className="text-center text-lg font-semibold">Enviar Documento</DialogTitle>
           <DialogDescription className="text-center text-base">
-            You are about to send this document to the recipients. Are you sure you want to
-            continue?
+          Está a punto de enviar este documento a los destinatarios. Estás seguro de que quieres continuar?
           </DialogDescription>
         </DialogHeader>
 
@@ -50,13 +49,13 @@ export const SendDocumentActionDialog = ({
             variant="secondary"
             onClick={() => setOpen(false)}
           >
-            Cancel
+            Cancelar
           </Button>
 
           {/* We would use DialogAction here but it interrupts the submit action */}
           <Button className={className} {...props}>
             {loading && <Loader className="mr-2 h-5 w-5 animate-spin" />}
-            Send
+            Enviar
           </Button>
         </DialogFooter>
       </DialogContent>

@@ -102,19 +102,19 @@ export const TransferTeamDialog = ({
       router.refresh();
 
       toast({
-        title: 'Success',
-        description: 'An email requesting the transfer of this team has been sent.',
+        title: 'Correcto',
+        description: 'Se ha enviado un correo electrónico solicitando la transferencia de este equipo.',
         duration: 5000,
       });
 
       setOpen(false);
     } catch (err) {
       toast({
-        title: 'An unknown error occurred',
+        title: 'Un error desconocido ocurrió',
         variant: 'destructive',
         duration: 10000,
         description:
-          'We encountered an unknown error while attempting to request a transfer of this team. Please try again later.',
+          'Encontramos un error desconocido al intentar solicitar una transferencia de este equipo. Por favor, inténtelo de nuevo más tarde.',
       });
     }
   };
@@ -140,7 +140,7 @@ export const TransferTeamDialog = ({
       <DialogTrigger asChild>
         {trigger ?? (
           <Button variant="outline" className="bg-background">
-            Transfer team
+            Transferir equipo
           </Button>
         )}
       </DialogTrigger>
@@ -148,10 +148,10 @@ export const TransferTeamDialog = ({
       {teamMembers && teamMembers.length > 0 ? (
         <DialogContent position="center">
           <DialogHeader>
-            <DialogTitle>Transfer team</DialogTitle>
+            <DialogTitle>Transferir equipo</DialogTitle>
 
             <DialogDescription className="mt-4">
-              Transfer ownership of this team to a selected team member.
+            Transfiera la propiedad de este equipo a un miembro del equipo seleccionado.
             </DialogDescription>
           </DialogHeader>
 
@@ -166,7 +166,7 @@ export const TransferTeamDialog = ({
                   name="newOwnerUserId"
                   render={({ field }) => (
                     <FormItem className="w-full">
-                      <FormLabel required>New team owner</FormLabel>
+                      <FormLabel required>Nuevo dueño del equipo</FormLabel>
                       <FormControl>
                         <Select {...field} onValueChange={field.onChange}>
                           <SelectTrigger className="text-muted-foreground">
@@ -196,7 +196,7 @@ export const TransferTeamDialog = ({
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel>
-                        Confirm by typing{' '}
+                      Confirmar escribiendo{' '}
                         <span className="text-destructive">{confirmTransferMessage}</span>
                       </FormLabel>
                       <FormControl>
@@ -261,11 +261,11 @@ export const TransferTeamDialog = ({
 
                 <DialogFooter>
                   <Button type="button" variant="secondary" onClick={() => setOpen(false)}>
-                    Cancel
+                    Cancelar
                   </Button>
 
                   <Button type="submit" variant="destructive" loading={form.formState.isSubmitting}>
-                    Request transfer
+                  Solicitar transferencia
                   </Button>
                 </DialogFooter>
               </fieldset>
@@ -282,8 +282,8 @@ export const TransferTeamDialog = ({
           ) : (
             <p className="text-center text-sm">
               {loadingTeamMembersError
-                ? 'An error occurred while loading team members. Please try again later.'
-                : 'You must have at least one other team member to transfer ownership.'}
+                ? 'Se produjo un error al cargar los miembros del equipo. Por favor, inténtelo de nuevo más tarde.'
+                : 'Debes tener al menos otro miembro del equipo para transferir la propiedad.'}
             </p>
           )}
         </DialogContent>

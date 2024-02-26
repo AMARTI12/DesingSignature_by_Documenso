@@ -20,7 +20,7 @@ export const TeamEmailRemovedTemplate = ({
   teamName = 'Team Name',
   teamUrl = 'demo',
 }: TeamEmailRemovedTemplateProps) => {
-  const previewText = `Team email removed for ${teamName} on Documenso`;
+  const previewText = `Correo electrónico del equipo eliminado por ${teamName} en Design Signature`;
 
   return (
     <Html>
@@ -54,12 +54,11 @@ export const TeamEmailRemovedTemplate = ({
 
               <Section className="p-2 text-slate-500">
                 <Text className="text-center text-lg font-medium text-black">
-                  Team email removed
+                Correo electrónico del equipo eliminado
                 </Text>
 
                 <Text className="my-1 text-center text-base">
-                  The team email <span className="font-bold">{teamEmail}</span> has been removed
-                  from the following team
+                El correo electrónico del equipo <span className="font-bold">{teamEmail}</span> ha sido removido
                 </Text>
 
                 <div className="mx-auto mb-6 mt-2 w-fit rounded-lg bg-gray-50 px-4 py-2 text-base font-medium text-slate-600">

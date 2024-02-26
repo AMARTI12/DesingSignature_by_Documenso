@@ -48,7 +48,7 @@ export const DeleteTeamDialog = ({ trigger, teamId, teamName }: DeleteTeamDialog
 
   const ZDeleteTeamFormSchema = z.object({
     teamName: z.literal(deleteMessage, {
-      errorMap: () => ({ message: `You must enter '${deleteMessage}' to proceed` }),
+      errorMap: () => ({ message: `debes ingresar '${deleteMessage}' para proceder` }),
     }),
   });
 
@@ -66,8 +66,8 @@ export const DeleteTeamDialog = ({ trigger, teamId, teamName }: DeleteTeamDialog
       await deleteTeam({ teamId });
 
       toast({
-        title: 'Success',
-        description: 'Your team has been successfully deleted.',
+        title: 'Correcto',
+        description: 'Su equipo ha sido eliminado exitosamente.',
         duration: 5000,
       });
 
@@ -78,20 +78,20 @@ export const DeleteTeamDialog = ({ trigger, teamId, teamName }: DeleteTeamDialog
       const error = AppError.parseError(err);
 
       let toastError: Toast = {
-        title: 'An unknown error occurred',
+        title: 'Un error desconocido ocurrió',
         variant: 'destructive',
         duration: 10000,
         description:
-          'We encountered an unknown error while attempting to delete this team. Please try again later.',
+          'Encontramos un error desconocido al intentar eliminar este equipo. Por favor, inténtelo de nuevo más tarde.',
       };
 
       if (error.code === 'resource_missing') {
         toastError = {
-          title: 'Unable to delete team',
+          title: 'No se puede eliminar el equipo',
           variant: 'destructive',
           duration: 15000,
           description:
-            'Something went wrong while updating the team billing subscription, please contact support.',
+            'Algo salió mal al actualizar la suscripción de facturación del equipo; comuníquese con el soporte.',
         };
       }
 
@@ -108,15 +108,15 @@ export const DeleteTeamDialog = ({ trigger, teamId, teamName }: DeleteTeamDialog
   return (
     <Dialog open={open} onOpenChange={(value) => !form.formState.isSubmitting && setOpen(value)}>
       <DialogTrigger asChild>
-        {trigger ?? <Button variant="destructive">Delete team</Button>}
+        {trigger ?? <Button variant="destructive">Eliminar equipo</Button>}
       </DialogTrigger>
 
       <DialogContent position="center">
         <DialogHeader>
-          <DialogTitle>Delete team</DialogTitle>
+          <DialogTitle>Eliminar equipo</DialogTitle>
 
           <DialogDescription className="mt-4">
-            Are you sure? This is irreversable.
+          ¿Está seguro? Esto es irreversible.
           </DialogDescription>
         </DialogHeader>
 
@@ -132,7 +132,7 @@ export const DeleteTeamDialog = ({ trigger, teamId, teamName }: DeleteTeamDialog
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>
-                      Confirm by typing <span className="text-destructive">{deleteMessage}</span>
+                    Confirmar escribiendo <span className="text-destructive">{deleteMessage}</span>
                     </FormLabel>
                     <FormControl>
                       <Input className="bg-background" {...field} />
@@ -144,11 +144,11 @@ export const DeleteTeamDialog = ({ trigger, teamId, teamName }: DeleteTeamDialog
 
               <DialogFooter>
                 <Button type="button" variant="secondary" onClick={() => setOpen(false)}>
-                  Cancel
+                  Cancelar
                 </Button>
 
                 <Button type="submit" variant="destructive" loading={form.formState.isSubmitting}>
-                  Delete
+                  Eliminar
                 </Button>
               </DialogFooter>
             </fieldset>

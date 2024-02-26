@@ -82,8 +82,8 @@ export const CreateTeamDialog = ({ trigger, ...props }: CreateTeamDialogProps) =
       }
 
       toast({
-        title: 'Success',
-        description: 'Your team has been created.',
+        title: 'Correcto',
+        description: 'Tu equipo ha sido creado.',
         duration: 5000,
       });
     } catch (err) {
@@ -92,17 +92,17 @@ export const CreateTeamDialog = ({ trigger, ...props }: CreateTeamDialogProps) =
       if (error.code === AppErrorCode.ALREADY_EXISTS) {
         form.setError('teamUrl', {
           type: 'manual',
-          message: 'This URL is already in use.',
+          message: 'Esta URL ya está en uso.',
         });
 
         return;
       }
 
       toast({
-        title: 'An unknown error occurred',
+        title: 'Un error desconocido ocurrió',
         variant: 'destructive',
         description:
-          'We encountered an unknown error while attempting to create a team. Please try again later.',
+          'Encontramos un error desconocido al intentar crear un equipo. Por favor, inténtelo de nuevo más tarde.',
       });
     }
   };
@@ -131,17 +131,17 @@ export const CreateTeamDialog = ({ trigger, ...props }: CreateTeamDialogProps) =
       <DialogTrigger onClick={(e) => e.stopPropagation()} asChild={true}>
         {trigger ?? (
           <Button className="flex-shrink-0" variant="secondary">
-            Create team
+            Crear equipo
           </Button>
         )}
       </DialogTrigger>
 
       <DialogContent position="center">
         <DialogHeader>
-          <DialogTitle>Create team</DialogTitle>
+          <DialogTitle>Crear equipo</DialogTitle>
 
           <DialogDescription className="mt-4">
-            Create a team to collaborate with your team members.
+          Crea un equipo para colaborar con los miembros de tu equipo.
           </DialogDescription>
         </DialogHeader>
 
@@ -156,7 +156,7 @@ export const CreateTeamDialog = ({ trigger, ...props }: CreateTeamDialogProps) =
                 name="teamName"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel required>Team Name</FormLabel>
+                    <FormLabel required>Nombre del equipo</FormLabel>
                     <FormControl>
                       <Input
                         className="bg-background"
@@ -184,7 +184,7 @@ export const CreateTeamDialog = ({ trigger, ...props }: CreateTeamDialogProps) =
                 name="teamUrl"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel required>Team URL</FormLabel>
+                    <FormLabel required>URL del equipo</FormLabel>
                     <FormControl>
                       <Input className="bg-background" {...field} />
                     </FormControl>
@@ -192,7 +192,7 @@ export const CreateTeamDialog = ({ trigger, ...props }: CreateTeamDialogProps) =
                       <span className="text-foreground/50 text-xs font-normal">
                         {field.value
                           ? `${WEBAPP_BASE_URL}/t/${field.value}`
-                          : 'A unique URL to identify your team'}
+                          : 'Una URL única para identificar a tu equipo'}
                       </span>
                     )}
 
@@ -203,7 +203,7 @@ export const CreateTeamDialog = ({ trigger, ...props }: CreateTeamDialogProps) =
 
               <DialogFooter>
                 <Button type="button" variant="secondary" onClick={() => setOpen(false)}>
-                  Cancel
+                  Cancelar
                 </Button>
 
                 <Button
@@ -211,7 +211,7 @@ export const CreateTeamDialog = ({ trigger, ...props }: CreateTeamDialogProps) =
                   data-testid="dialog-create-team-button"
                   loading={form.formState.isSubmitting}
                 >
-                  Create Team
+                  Crear Equipo
                 </Button>
               </DialogFooter>
             </fieldset>

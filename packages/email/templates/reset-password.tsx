@@ -24,7 +24,7 @@ export const ResetPasswordTemplate = ({
   userEmail = 'lucas@documenso.com',
   assetBaseUrl = 'http://localhost:3002',
 }: ResetPasswordTemplateProps) => {
-  const previewText = `Password Reset Successful`;
+  const previewText = `Restablecimiento de contraseña exitoso`;
 
   const getAssetUrl = (path: string) => {
     return new URL(path, assetBaseUrl).toString();
@@ -64,21 +64,20 @@ export const ResetPasswordTemplate = ({
             <Container className="mx-auto mt-12 max-w-xl">
               <Section>
                 <Text className="my-4 text-base font-semibold">
-                  Hi, {userName}{' '}
+                  Hola, {userName}{' '}
                   <Link className="font-normal text-slate-400" href={`mailto:${userEmail}`}>
                     ({userEmail})
                   </Link>
                 </Text>
 
                 <Text className="mt-2 text-base text-slate-400">
-                  We've changed your password as you asked. You can now sign in with your new
-                  password.
+                Hemos cambiado su contraseña como usted nos pidió. Ahora puedes iniciar sesión con tu nueva contraseña.
                 </Text>
                 <Text className="mt-2 text-base text-slate-400">
-                  Didn't request a password change? We are here to help you secure your account,
-                  just{' '}
-                  <Link className="text-documenso-700 font-normal" href="mailto:hi@documenso.com">
-                    contact us.
+                ¿No solicitaste un cambio de contraseña? Estamos aquí para ayudarle a proteger su cuenta,
+                  Acá{' '}
+                  <Link className="text-documenso-700 font-normal" href="mailto:fredy.martinez@excellentiam.co">
+                    Contactenos.
                   </Link>
                 </Text>
               </Section>

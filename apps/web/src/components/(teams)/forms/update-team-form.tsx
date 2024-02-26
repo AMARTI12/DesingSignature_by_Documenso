@@ -62,8 +62,8 @@ export const UpdateTeamForm = ({ teamId, teamName, teamUrl }: UpdateTeamDialogPr
       });
 
       toast({
-        title: 'Success',
-        description: 'Your team has been successfully updated.',
+        title: 'Correcto',
+        description: 'Su equipo se ha actualizado correctamente.',
         duration: 5000,
       });
 
@@ -81,17 +81,17 @@ export const UpdateTeamForm = ({ teamId, teamName, teamUrl }: UpdateTeamDialogPr
       if (error.code === AppErrorCode.ALREADY_EXISTS) {
         form.setError('url', {
           type: 'manual',
-          message: 'This URL is already in use.',
+          message: 'Esta URL ya está en uso.',
         });
 
         return;
       }
 
       toast({
-        title: 'An unknown error occurred',
+        title: 'Un error desconocido ocurrió',
         variant: 'destructive',
         description:
-          'We encountered an unknown error while attempting to update your team. Please try again later.',
+          'Encontramos un error desconocido al intentar actualizar su equipo. Por favor, inténtelo de nuevo más tarde.',
       });
     }
   };
@@ -105,7 +105,7 @@ export const UpdateTeamForm = ({ teamId, teamName, teamUrl }: UpdateTeamDialogPr
             name="name"
             render={({ field }) => (
               <FormItem>
-                <FormLabel required>Team Name</FormLabel>
+                <FormLabel required>Nombre del equipo</FormLabel>
                 <FormControl>
                   <Input className="bg-background" {...field} />
                 </FormControl>
@@ -119,7 +119,7 @@ export const UpdateTeamForm = ({ teamId, teamName, teamUrl }: UpdateTeamDialogPr
             name="url"
             render={({ field }) => (
               <FormItem className="mt-4">
-                <FormLabel required>Team URL</FormLabel>
+                <FormLabel required>URL del equipo</FormLabel>
                 <FormControl>
                   <Input className="bg-background" {...field} />
                 </FormControl>
@@ -151,7 +151,7 @@ export const UpdateTeamForm = ({ teamId, teamName, teamUrl }: UpdateTeamDialogPr
                   }}
                 >
                   <Button type="button" variant="secondary" onClick={() => form.reset()}>
-                    Reset
+                    Deshacer
                   </Button>
                 </motion.div>
               )}
@@ -163,7 +163,7 @@ export const UpdateTeamForm = ({ teamId, teamName, teamUrl }: UpdateTeamDialogPr
               disabled={!form.formState.isDirty}
               loading={form.formState.isSubmitting}
             >
-              Update team
+              Actualizar Equipo
             </Button>
           </div>
         </fieldset>
