@@ -13,7 +13,7 @@ export const DocumentCancelTemplate = ({
   documentName = 'Open Source Pledge.pdf',
   assetBaseUrl = 'http://localhost:3002',
 }: DocumentCancelEmailTemplateProps) => {
-  const previewText = `${inviterName} has cancelled the document ${documentName}, you don't need to sign it anymore.`;
+  const previewText = `${inviterName} ha cancelado el documento ${documentName}, ya no necesitas firmarlo.`;
 
   const getAssetUrl = (path: string) => {
     return new URL(path, assetBaseUrl).toString();

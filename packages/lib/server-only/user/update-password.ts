@@ -26,18 +26,18 @@ export const updatePassword = async ({
   });
 
   if (!user.password) {
-    throw new Error('User has no password');
+    throw new Error('El usuario no tiene contraseña');
   }
 
   const isCurrentPasswordValid = await compare(currentPassword, user.password);
   if (!isCurrentPasswordValid) {
-    throw new Error('Current password is incorrect.');
+    throw new Error('La contraseña actual es incorrecta.');
   }
 
   // Compare the new password with the old password
   const isSamePassword = await compare(password, user.password);
   if (isSamePassword) {
-    throw new Error('Your new password cannot be the same as your old password.');
+    throw new Error('Su nueva contraseña no puede ser la misma que su antigua contraseña.');
   }
 
   const hashedNewPassword = await hash(password, SALT_ROUNDS);

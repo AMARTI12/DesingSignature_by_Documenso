@@ -34,14 +34,17 @@ import { PasswordInput } from '@documenso/ui/primitives/password-input';
 import { useToast } from '@documenso/ui/primitives/use-toast';
 
 const ERROR_MESSAGES: Partial<Record<keyof typeof ErrorCode, string>> = {
-  [ErrorCode.CREDENTIALS_NOT_FOUND]: 'The email or password provided is incorrect',
-  [ErrorCode.INCORRECT_EMAIL_PASSWORD]: 'The email or password provided is incorrect',
+  [ErrorCode.CREDENTIALS_NOT_FOUND]:
+    'El correo electrónico o la contraseña proporcionada son incorrectos',
+  [ErrorCode.INCORRECT_EMAIL_PASSWORD]:
+    'El correo electrónico o la contraseña proporcionada son incorrectos',
   [ErrorCode.USER_MISSING_PASSWORD]:
-    'This account appears to be using a social login method, please sign in using that method',
-  [ErrorCode.INCORRECT_TWO_FACTOR_CODE]: 'The two-factor authentication code provided is incorrect',
-  [ErrorCode.INCORRECT_TWO_FACTOR_BACKUP_CODE]: 'The backup code provided is incorrect',
+    'Esta cuenta parece estar usando un método de inicio de sesión social, inicie sesión usando ese método',
+  [ErrorCode.INCORRECT_TWO_FACTOR_CODE]:
+    'El código de autenticación de dos factores proporcionado es incorrecto',
+  [ErrorCode.INCORRECT_TWO_FACTOR_BACKUP_CODE]: 'El código de respaldo proporcionado es incorrecto',
   [ErrorCode.UNVERIFIED_EMAIL]:
-    'This account has not been verified. Please verify your account before signing in.',
+    'Esta cuenta no ha sido verificada. Verifique su cuenta antes de iniciar sesión.',
 };
 
 const TwoFactorEnabledErrorCode = ErrorCode.TWO_FACTOR_MISSING_CREDENTIALS;
@@ -139,8 +142,8 @@ export const SignInForm = ({ className, initialEmail, isGoogleSSOEnabled }: Sign
           router.push(`/unverified-account`);
 
           toast({
-            title: 'Unable to sign in',
-            description: errorMessage ?? 'An unknown error occurred',
+            title: 'No se puede acceder',
+            description: errorMessage ?? 'Un error desconocido ocurrió',
           });
 
           return;
@@ -148,23 +151,23 @@ export const SignInForm = ({ className, initialEmail, isGoogleSSOEnabled }: Sign
 
         toast({
           variant: 'destructive',
-          title: 'Unable to sign in',
-          description: errorMessage ?? 'An unknown error occurred',
+          title: 'No se puede acceder',
+          description: errorMessage ?? 'Un error desconocido ocurrió',
         });
 
         return;
       }
 
       if (!result?.url) {
-        throw new Error('An unknown error occurred');
+        throw new Error('Un error desconocido ocurrió');
       }
 
       window.location.href = result.url;
     } catch (err) {
       toast({
-        title: 'An unknown error occurred',
+        title: 'Un error desconocido ocurrió',
         description:
-          'We encountered an unknown error while attempting to sign you In. Please try again later.',
+          'Encontramos un error desconocido al intentar iniciar sesión. Por favor, inténtelo de nuevo más tarde.',
       });
     }
   };
@@ -174,9 +177,9 @@ export const SignInForm = ({ className, initialEmail, isGoogleSSOEnabled }: Sign
       await signIn('google', { callbackUrl: LOGIN_REDIRECT_PATH });
     } catch (err) {
       toast({
-        title: 'An unknown error occurred',
+        title: 'Un error desconocido ocurrió',
         description:
-          'We encountered an unknown error while attempting to sign you In. Please try again later.',
+          'Encontramos un error desconocido al intentar iniciar sesión. Por favor, inténtelo de nuevo más tarde.',
         variant: 'destructive',
       });
     }
@@ -208,7 +211,7 @@ export const SignInForm = ({ className, initialEmail, isGoogleSSOEnabled }: Sign
             name="password"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Password</FormLabel>
+                <FormLabel>Contraseña</FormLabel>
                 <FormControl>
                   <PasswordInput {...field} />
                 </FormControl>
@@ -224,14 +227,14 @@ export const SignInForm = ({ className, initialEmail, isGoogleSSOEnabled }: Sign
           loading={isSubmitting}
           className="dark:bg-documenso dark:hover:opacity-90"
         >
-          {isSubmitting ? 'Signing in...' : 'Sign In'}
+          {isSubmitting ? 'Ingresando...' : 'Ingresar'}
         </Button>
 
         {isGoogleSSOEnabled && (
           <>
             <div className="relative flex items-center justify-center gap-x-4 py-2 text-xs uppercase">
               <div className="bg-border h-px flex-1" />
-              <span className="text-muted-foreground bg-transparent">Or continue with</span>
+              <span className="text-muted-foreground bg-transparent">O ingresa con</span>
               <div className="bg-border h-px flex-1" />
             </div>
 
@@ -300,12 +303,12 @@ export const SignInForm = ({ className, initialEmail, isGoogleSSOEnabled }: Sign
                   onClick={onToggleTwoFactorAuthenticationMethodClick}
                 >
                   {twoFactorAuthenticationMethod === 'totp'
-                    ? 'Use Backup Code'
-                    : 'Use Authenticator'}
+                    ? 'Usar Backup Code'
+                    : 'Usar Authenticator'}
                 </Button>
 
                 <Button type="submit" loading={isSubmitting}>
-                  {isSubmitting ? 'Signing in...' : 'Sign In'}
+                  {isSubmitting ? 'Ingresando...' : 'Ingresar'}
                 </Button>
               </DialogFooter>
             </fieldset>

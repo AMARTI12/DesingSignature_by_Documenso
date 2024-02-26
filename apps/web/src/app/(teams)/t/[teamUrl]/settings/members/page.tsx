@@ -20,7 +20,7 @@ export default async function TeamsSettingsMembersPage({ params }: TeamsSettings
 
   return (
     <div>
-      <SettingsHeader title="Members" subtitle="Manage the members or invite new members.">
+      <SettingsHeader title="Miembros" subtitle="Gestiona los miembros o invita a nuevos miembros.">
         <InviteTeamMembersDialog
           teamId={team.id}
           currentUserTeamRole={team.currentTeamMember.role}

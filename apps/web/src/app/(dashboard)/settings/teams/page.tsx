@@ -17,7 +17,7 @@ export default function TeamsSettingsPage() {
 
   return (
     <div>
-      <SettingsHeader title="Teams" subtitle="Manage all teams you are currently associated with.">
+      <SettingsHeader title="Equipos" subtitle="Administre todos los equipos con los que está asociado actualmente.">
         <CreateTeamDialog />
       </SettingsHeader>
 

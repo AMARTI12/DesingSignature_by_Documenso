@@ -180,7 +180,7 @@ export function CommandMenu({ open, onOpenChange }: CommandMenuProps) {
       <CommandInput
         value={search}
         onValueChange={setSearch}
-        placeholder="Type a command or search..."
+        placeholder="Escribe un comando o busca..."
       />
 
       <CommandList>
@@ -193,26 +193,26 @@ export function CommandMenu({ open, onOpenChange }: CommandMenuProps) {
             </div>
           </CommandEmpty>
         ) : (
-          <CommandEmpty>No results found.</CommandEmpty>
+          <CommandEmpty>No se han encontrado resultados.</CommandEmpty>
         )}
         {!currentPage && (
           <>
-            <CommandGroup className="mx-2 p-0 pb-2" heading="Documents">
+            <CommandGroup className="mx-2 p-0 pb-2" heading="Documentos">
               <Commands push={push} pages={DOCUMENTS_PAGES} />
             </CommandGroup>
-            <CommandGroup className="mx-2 p-0 pb-2" heading="Templates">
+            <CommandGroup className="mx-2 p-0 pb-2" heading="Plantillas">
               <Commands push={push} pages={TEMPLATES_PAGES} />
             </CommandGroup>
-            <CommandGroup className="mx-2 p-0 pb-2" heading="Settings">
+            <CommandGroup className="mx-2 p-0 pb-2" heading="Configuración">
               <Commands push={push} pages={SETTINGS_PAGES} />
             </CommandGroup>
-            <CommandGroup className="mx-2 p-0 pb-2" heading="Preferences">
+            <CommandGroup className="mx-2 p-0 pb-2" heading="Preferencias">
               <CommandItem className="-mx-2 -my-1 rounded-lg" onSelect={() => addPage('theme')}>
-                Change theme
+              Cambiar el tema
               </CommandItem>
             </CommandGroup>
             {searchResults.length > 0 && (
-              <CommandGroup className="mx-2 p-0 pb-2" heading="Your documents">
+              <CommandGroup className="mx-2 p-0 pb-2" heading="Tus documentos">
                 <Commands push={push} pages={searchResults} />
               </CommandGroup>
             )}
@@ -249,7 +249,7 @@ const ThemeCommands = ({ setTheme }: { setTheme: (_theme: string) => void }) => 
     () => [
       { label: 'Light Mode', theme: THEMES_TYPE.LIGHT, icon: Sun },
       { label: 'Dark Mode', theme: THEMES_TYPE.DARK, icon: Moon },
-      { label: 'System Theme', theme: THEMES_TYPE.SYSTEM, icon: Monitor },
+      { label: 'Tema del Sistema', theme: THEMES_TYPE.SYSTEM, icon: Monitor },
     ],
     [],
   );

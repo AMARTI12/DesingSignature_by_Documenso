@@ -19,9 +19,9 @@ export default async function VerifyEmailPage({ params: { token } }: PageProps) 
           <XOctagon />
         </div>
 
-        <h2 className="text-4xl font-semibold">No token provided</h2>
+        <h2 className="text-4xl font-semibold">No se proporcionó ningún token</h2>
         <p className="text-muted-foreground mt-2 text-base">
-          It seems that there is no token provided. Please check your email and try again.
+        Parece que no se proporcionó ningún token. Por favor revisa tu correo electrónico y vuelve a intentarlo.
         </p>
       </div>
     );
@@ -37,15 +37,14 @@ export default async function VerifyEmailPage({ params: { token } }: PageProps) 
         </div>
 
         <div>
-          <h2 className="text-2xl font-bold md:text-4xl">Something went wrong</h2>
+          <h2 className="text-2xl font-bold md:text-4xl">Algo salió mal</h2>
 
           <p className="text-muted-foreground mt-4">
-            We were unable to verify your email. If your email is not verified already, please try
-            again.
+          No pudimos verificar su correo electrónico. Si su correo electrónico aún no está verificado, inténtelo de nuevo.
           </p>
 
           <Button className="mt-4" asChild>
-            <Link href="/">Go back home</Link>
+            <Link href="/">Ir al inicio</Link>
           </Button>
         </div>
       </div>
@@ -60,15 +59,14 @@ export default async function VerifyEmailPage({ params: { token } }: PageProps) 
         </div>
 
         <div>
-          <h2 className="text-2xl font-bold md:text-4xl">Your token has expired!</h2>
+          <h2 className="text-2xl font-bold md:text-4xl">¡Tu token ha caducado!</h2>
 
           <p className="text-muted-foreground mt-4">
-            It seems that the provided token has expired. We've just sent you another token, please
-            check your email and try again.
+          Parece que el token proporcionado ha caducado. Acabamos de enviarte otro token, revisa tu correo electrónico e inténtalo nuevamente.
           </p>
 
           <Button className="mt-4" asChild>
-            <Link href="/">Go back home</Link>
+            <Link href="/">Ir al inicio</Link>
           </Button>
         </div>
       </div>
@@ -82,14 +80,14 @@ export default async function VerifyEmailPage({ params: { token } }: PageProps) 
       </div>
 
       <div>
-        <h2 className="text-2xl font-bold md:text-4xl">Email Confirmed!</h2>
+        <h2 className="text-2xl font-bold md:text-4xl">Email Confirmado!</h2>
 
         <p className="text-muted-foreground mt-4">
-          Your email has been successfully confirmed! You can now use all features of Documenso.
+        ¡Tu correo electrónico ha sido confirmado exitosamente! Ahora puede utilizar todas las funciones de Design Signature.
         </p>
 
         <Button className="mt-4" asChild>
-          <Link href="/">Go back home</Link>
+          <Link href="/">Ir al inicio</Link>
         </Button>
       </div>
     </div>

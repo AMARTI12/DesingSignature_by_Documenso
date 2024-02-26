@@ -11,7 +11,7 @@ export const DocumentSelfSignedEmailTemplate = ({
   documentName = 'Open Source Pledge.pdf',
   assetBaseUrl = 'http://localhost:3002',
 }: DocumentSelfSignedTemplateProps) => {
-  const previewText = `Completed Document`;
+  const previewText = `Documento completado`;
 
   const getAssetUrl = (path: string) => {
     return new URL(path, assetBaseUrl).toString();

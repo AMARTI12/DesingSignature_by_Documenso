@@ -29,7 +29,7 @@ export const ZResetPasswordFormSchema = z
   })
   .refine((data) => data.password === data.repeatedPassword, {
     path: ['repeatedPassword'],
-    message: "Passwords don't match",
+    message: "Las contraseñas no coinciden",
   });
 
 export type TResetPasswordFormSchema = z.infer<typeof ZResetPasswordFormSchema>;
@@ -66,8 +66,8 @@ export const ResetPasswordForm = ({ className, token }: ResetPasswordFormProps) 
       form.reset();
 
       toast({
-        title: 'Password updated',
-        description: 'Your password has been updated successfully.',
+        title: 'Contraseña actualizada',
+        description: 'Su contraseña se ha actualizado correctamente.',
         duration: 5000,
       });
 
@@ -75,16 +75,16 @@ export const ResetPasswordForm = ({ className, token }: ResetPasswordFormProps) 
     } catch (err) {
       if (err instanceof TRPCClientError && err.data?.code === 'BAD_REQUEST') {
         toast({
-          title: 'An error occurred',
+          title: 'Un error desconocido ocurrió',
           description: err.message,
           variant: 'destructive',
         });
       } else {
         toast({
-          title: 'An unknown error occurred',
+          title: 'Un error desconocido ocurrió',
           variant: 'destructive',
           description:
-            'We encountered an unknown error while attempting to reset your password. Please try again later.',
+            'Encontramos un error desconocido al intentar restablecer su contraseña. Por favor, inténtelo de nuevo más tarde.',
         });
       }
     }
@@ -102,7 +102,7 @@ export const ResetPasswordForm = ({ className, token }: ResetPasswordFormProps) 
             name="password"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Password</FormLabel>
+                <FormLabel>Contraseña</FormLabel>
                 <FormControl>
                   <PasswordInput {...field} />
                 </FormControl>
@@ -116,7 +116,7 @@ export const ResetPasswordForm = ({ className, token }: ResetPasswordFormProps) 
             name="repeatedPassword"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Repeat Password</FormLabel>
+                <FormLabel>Repetir Contraseña</FormLabel>
                 <FormControl>
                   <PasswordInput {...field} />
                 </FormControl>
@@ -127,7 +127,7 @@ export const ResetPasswordForm = ({ className, token }: ResetPasswordFormProps) 
         </fieldset>
 
         <Button type="submit" size="lg" loading={isSubmitting}>
-          {isSubmitting ? 'Resetting Password...' : 'Reset Password'}
+          {isSubmitting ? 'Reseteando Contraseña...' : 'Resetear Contraseña'}
         </Button>
       </form>
     </Form>

@@ -9,7 +9,7 @@ export const ConfirmEmailTemplate = ({
   confirmationLink,
   assetBaseUrl = 'http://localhost:3002',
 }: TemplateConfirmationEmailProps) => {
-  const previewText = `Please confirm your email address`;
+  const previewText = `Por favor confirme su dirección de correo electrónico`;
 
   const getAssetUrl = (path: string) => {
     return new URL(path, assetBaseUrl).toString();
