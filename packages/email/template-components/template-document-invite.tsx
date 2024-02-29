@@ -28,12 +28,12 @@ export const TemplateDocumentInvite = ({
 
       <Section>
         <Text className="text-primary mx-auto mb-0 max-w-[80%] text-center text-lg font-semibold">
-          {inviterName} has invited you to {actionVerb.toLowerCase()}
+          {inviterName} te ha invitado a {actionVerb.toLowerCase()}
           <br />"{documentName}"
         </Text>
 
         <Text className="my-1 text-center text-base text-slate-400">
-          Continue by {progressiveVerb.toLowerCase()} the document.
+        Por favor continua {progressiveVerb.toLowerCase()} el documento.
         </Text>
 
         <Section className="mb-6 mt-8 text-center">
@@ -41,7 +41,7 @@ export const TemplateDocumentInvite = ({
             className="bg-documenso-500 inline-flex items-center justify-center rounded-lg px-6 py-3 text-center text-sm font-medium text-black no-underline"
             href={signDocumentLink}
           >
-            {actionVerb} Document
+            {actionVerb} Documento
           </Button>
         </Section>
       </Section>

@@ -39,7 +39,7 @@ export const profileRouter = router({
       } catch (err) {
         throw new TRPCError({
           code: 'BAD_REQUEST',
-          message: 'We were unable to find user security audit logs. Please try again.',
+          message: 'No pudimos encontrar registros de auditoría de seguridad de los usuarios. Inténtalo de nuevo.',
         });
       }
     }),
@@ -52,7 +52,7 @@ export const profileRouter = router({
     } catch (err) {
       throw new TRPCError({
         code: 'BAD_REQUEST',
-        message: 'We were unable to retrieve the specified account. Please try again.',
+        message: 'No pudimos recuperar la cuenta especificada. Inténtalo de nuevo.',
       });
     }
   }),
@@ -75,7 +75,7 @@ export const profileRouter = router({
         throw new TRPCError({
           code: 'BAD_REQUEST',
           message:
-            'We were unable to update your profile. Please review the information you provided and try again.',
+            'No pudimos actualizar su perfil. Revise la información que proporcionó y vuelva a intentarlo.',
         });
       }
     }),
@@ -136,7 +136,7 @@ export const profileRouter = router({
         });
       } catch (err) {
         let message =
-          'We were unable to update your profile. Please review the information you provided and try again.';
+          'No pudimos actualizar su perfil. Revise la información que proporcionó y vuelva a intentarlo.';
 
         if (err instanceof Error) {
           message = err.message;
@@ -171,7 +171,7 @@ export const profileRouter = router({
         requestMetadata: extractNextApiRequestMetadata(ctx.req),
       });
     } catch (err) {
-      let message = 'We were unable to reset your password. Please try again.';
+      let message = 'No pudimos restablecer su contraseña. Inténtalo de nuevo.';
 
       if (err instanceof Error) {
         message = err.message;
@@ -192,7 +192,7 @@ export const profileRouter = router({
 
         return await sendConfirmationToken({ email });
       } catch (err) {
-        let message = 'We were unable to send a confirmation email. Please try again.';
+        let message = 'No pudimos enviar un correo electrónico de confirmación. Inténtalo de nuevo.';
 
         if (err instanceof Error) {
           message = err.message;

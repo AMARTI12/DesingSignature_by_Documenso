@@ -35,7 +35,7 @@ export const DocumentInviteEmailTemplate = ({
 }: DocumentInviteEmailTemplateProps) => {
   const action = RECIPIENT_ROLES_DESCRIPTION[role].actionVerb.toLowerCase();
 
-  const previewText = `${inviterName} has invited you to ${action} ${documentName}`;
+  const previewText = `${inviterName} te ha invitado a ${action} ${documentName}`;
 
   const getAssetUrl = (path: string) => {
     return new URL(path, assetBaseUrl).toString();
@@ -88,7 +88,7 @@ export const DocumentInviteEmailTemplate = ({
                   {customBody ? (
                     <pre className="font-sans text-base text-slate-400">{customBody}</pre>
                   ) : (
-                    `${inviterName} has invited you to ${action} the document "${documentName}".`
+                    `${inviterName} te ha invitado a ${action} el documento "${documentName}".`
                   )}
                 </Text>
               </Section>

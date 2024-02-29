@@ -32,7 +32,7 @@ export const sendConfirmationEmail = async ({ userId }: SendConfirmationEmailPro
   const [verificationToken] = user.VerificationToken;
 
   if (!verificationToken?.token) {
-    throw new Error('Verification token not found for the user');
+    throw new Error('Token de verificación no encontrado para el usuario');
   }
 
   const assetBaseUrl = NEXT_PUBLIC_WEBAPP_URL() || 'http://localhost:3000';
@@ -54,7 +54,7 @@ export const sendConfirmationEmail = async ({ userId }: SendConfirmationEmailPro
       name: senderName,
       address: senderAdress,
     },
-    subject: 'Please confirm your email',
+    subject: 'por favor, confirma tu email',
     html: render(confirmationTemplate),
     text: render(confirmationTemplate, { plainText: true }),
   });
