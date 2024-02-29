@@ -9,21 +9,23 @@ export const metadata: Metadata = {
 
 export default function ForgotPasswordPage() {
   return (
-    <div>
-      <h1 className="text-4xl font-semibold">Olvidaste tu contraseña?</h1>
+    <div className="w-screen max-w-lg px-4">
+      <div className="w-full">
+        <h1 className="text-3xl font-semibold">¿Olvidaste tu contraseña?</h1>
 
-      <p className="text-muted-foreground mt-2 text-sm">
-      ¡No te preocupes, sucede! Ingrese su correo electrónico y le enviaremos un enlace especial para restablecer su contraseña.
-      </p>
+        <p className="text-muted-foreground mt-2 text-sm">
+        ¡No te preocupes, sucede! Ingrese su correo electrónico y le enviaremos un enlace especial para restablecer su contraseña.
+        </p>
 
-      <ForgotPasswordForm className="mt-4" />
+        <ForgotPasswordForm className="mt-4" />
 
-      <p className="text-muted-foreground mt-6 text-center text-sm">
-      ¿Recordaste tu contraseña?{' '}
-        <Link href="/signin" className="text-primary duration-200 hover:opacity-70">
+        <p className="text-muted-foreground mt-6 text-center text-sm">
+        ¿Recordaste tu contraseña?{' '}
+          <Link href="/signin" className="text-primary duration-200 hover:opacity-70">
           Ingresar ahora
-        </Link>
-      </p>
+          </Link>
+        </p>
+      </div>
     </div>
   );
 }

@@ -30,36 +30,27 @@ export default function SignInPage({ searchParams }: SignInPageProps) {
   }
 
   return (
-    <div>
-      <h1 className="text-4xl font-semibold">Ingresa con tu cuenta</h1>
+    <div className="w-screen max-w-lg px-4">
+      <div className="border-border dark:bg-background z-10 rounded-xl border bg-neutral-100 p-6">
+        <h1 className="text-2xl font-semibold">Ingresa con tu cuenta</h1>
 
-      <p className="text-muted-foreground/60 mt-2 text-sm">
+        <p className="text-muted-foreground mt-2 text-sm">
         Bienvenido, que bueno tenerte de nuevo.
-      </p>
-
-      <SignInForm
-        className="mt-4"
-        initialEmail={email || undefined}
-        isGoogleSSOEnabled={IS_GOOGLE_SSO_ENABLED}
-      />
-
-      {NEXT_PUBLIC_DISABLE_SIGNUP !== 'true' && (
-        <p className="text-muted-foreground mt-6 text-center text-sm">
-          ¿No tienes una cuenta?{' '}
-          <Link href="/signup" className="text-primary duration-200 hover:opacity-70">
-            Registrate
-          </Link>
         </p>
-      )}
 
-      <p className="mt-2.5 text-center">
-        <Link
-          href="/forgot-password"
-          className="text-muted-foreground text-sm duration-200 hover:opacity-70"
-        >
-          ¿Olvidaste tu contraseña?
-        </Link>
-      </p>
+        <hr className="-mx-6 my-4" />
+
+        <SignInForm initialEmail={email || undefined} isGoogleSSOEnabled={IS_GOOGLE_SSO_ENABLED} />
+
+        {NEXT_PUBLIC_DISABLE_SIGNUP !== 'true' && (
+          <p className="text-muted-foreground mt-6 text-center text-sm">
+          ¿No tienes una cuenta?{' '}
+            <Link href="/signup" className="text-documenso-700 duration-200 hover:opacity-70">
+            Registrate
+            </Link>
+          </p>
+        )}
+      </div>
     </div>
   );
 }
