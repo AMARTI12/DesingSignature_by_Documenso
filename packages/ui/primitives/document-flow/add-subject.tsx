@@ -110,7 +110,7 @@ export const AddSubjectFormPartial = ({
           <div className="flex flex-col gap-y-4">
             <div>
               <Label htmlFor="subject">
-                Subject <span className="text-muted-foreground">(Optional)</span>
+                Asunto <span className="text-muted-foreground">(Opcional)</span>
               </Label>
 
               <Input
@@ -125,7 +125,7 @@ export const AddSubjectFormPartial = ({
 
             <div>
               <Label htmlFor="message">
-                Message <span className="text-muted-foreground">(Optional)</span>
+                Mensaje <span className="text-muted-foreground">(Opcional)</span>
               </Label>
 
               <Textarea
@@ -143,7 +143,7 @@ export const AddSubjectFormPartial = ({
 
             <div>
               <p className="text-muted-foreground text-sm">
-                You can use the following variables in your message:
+              Puede utilizar las siguientes variables en su mensaje:
               </p>
 
               <ul className="mt-2 flex list-inside list-disc flex-col gap-y-2 text-sm">
@@ -151,19 +151,19 @@ export const AddSubjectFormPartial = ({
                   <code className="text-muted-foreground bg-muted-foreground/20 rounded p-1 text-sm">
                     {'{signer.name}'}
                   </code>{' '}
-                  - The signer's name
+                  - El nombre del firmante
                 </li>
                 <li className="text-muted-foreground">
                   <code className="text-muted-foreground bg-muted-foreground/20 rounded p-1 text-sm">
                     {'{signer.email}'}
                   </code>{' '}
-                  - The signer's email
+                  - El correo electrónico del firmante
                 </li>
                 <li className="text-muted-foreground">
                   <code className="text-muted-foreground bg-muted-foreground/20 rounded p-1 text-sm">
                     {'{document.name}'}
                   </code>{' '}
-                  - The document's name
+                  - El nombre del documento.
                 </li>
               </ul>
             </div>
@@ -171,7 +171,7 @@ export const AddSubjectFormPartial = ({
             <Accordion type="multiple" className="mt-8 border-none">
               <AccordionItem value="advanced-options" className="border-none">
                 <AccordionTrigger className="mb-2 border-b text-left hover:no-underline">
-                  Advanced Options
+                Opciones avanzadas
                 </AccordionTrigger>
 
                 <AccordionContent className="text-muted-foreground -mx-1 flex max-w-prose flex-col px-1 pt-2 text-sm leading-relaxed">
@@ -179,7 +179,7 @@ export const AddSubjectFormPartial = ({
                     <>
                       <div className="flex flex-col">
                         <Label htmlFor="date-format">
-                          Date Format <span className="text-muted-foreground">(Optional)</span>
+                        Formato de fecha <span className="text-muted-foreground">(Opcional)</span>
                         </Label>
 
                         <Controller
@@ -206,7 +206,7 @@ export const AddSubjectFormPartial = ({
 
                       <div className="mt-4 flex flex-col">
                         <Label htmlFor="time-zone">
-                          Time Zone <span className="text-muted-foreground">(Optional)</span>
+                        Zona horaria <span className="text-muted-foreground">(Opcional)</span>
                         </Label>
 
                         <Controller
@@ -230,14 +230,14 @@ export const AddSubjectFormPartial = ({
                     <div className="flex flex-col gap-y-4">
                       <div>
                         <Label htmlFor="redirectUrl" className="flex items-center">
-                          Redirect URL{' '}
+                        Redireccionar URL{' '}
                           <Tooltip>
                             <TooltipTrigger>
                               <Info className="mx-2 h-4 w-4" />
                             </TooltipTrigger>
 
                             <TooltipContent className="text-muted-foreground max-w-xs">
-                              Add a URL to redirect the user to once the document is signed
+                            Agregue una URL para redirigir al usuario una vez que se firme el documento
                             </TooltipContent>
                           </Tooltip>
                         </Label>
@@ -270,7 +270,7 @@ export const AddSubjectFormPartial = ({
         <DocumentFlowFormContainerActions
           loading={isSubmitting}
           disabled={isSubmitting}
-          goNextLabel={document.status === DocumentStatus.DRAFT ? 'Send' : 'Update'}
+          goNextLabel={document.status === DocumentStatus.DRAFT ? 'Enviar' : 'Actualizar'}
           onGoBackClick={previousStep}
           onGoNextClick={() => void onFormSubmit()}
         />

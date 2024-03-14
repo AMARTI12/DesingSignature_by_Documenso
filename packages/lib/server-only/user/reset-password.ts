@@ -15,7 +15,7 @@ export type ResetPasswordOptions = {
 
 export const resetPassword = async ({ token, password, requestMetadata }: ResetPasswordOptions) => {
   if (!token) {
-    throw new Error('Invalid token provided. Please try again.');
+    throw new Error('Se proporcionó token no válido. Inténtalo de nuevo.');
   }
 
   const foundToken = await prisma.passwordResetToken.findFirst({
@@ -28,19 +28,19 @@ export const resetPassword = async ({ token, password, requestMetadata }: ResetP
   });
 
   if (!foundToken) {
-    throw new Error('Invalid token provided. Please try again.');
+    throw new Error('Se proporcionó token no válido. Inténtalo de nuevo.');
   }
 
   const now = new Date();
 
   if (now > foundToken.expiry) {
-    throw new Error('Token has expired. Please try again.');
+    throw new Error('El token ha caducado. Inténtalo de nuevo.');
   }
 
   const isSamePassword = await compare(password, foundToken.User.password || '');
 
   if (isSamePassword) {
-    throw new Error('Your new password cannot be the same as your old password.');
+    throw new Error('Su nueva contraseña no puede ser la misma que su antigua contraseña.');
   }
 
   const hashedPassword = await hash(password, SALT_ROUNDS);

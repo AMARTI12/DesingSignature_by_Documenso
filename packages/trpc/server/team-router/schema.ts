@@ -28,24 +28,24 @@ const GenericFindQuerySchema = z.object({
 export const ZTeamUrlSchema = z
   .string()
   .trim()
-  .min(3, { message: 'Team URL must be at least 3 characters long.' })
-  .max(30, { message: 'Team URL must not exceed 30 characters.' })
+  .min(3, { message: 'La URL del equipo debe tener al menos 3 caracteres.' })
+  .max(30, { message: 'La URL del equipo no debe exceder los 30 caracteres.' })
   .toLowerCase()
-  .regex(/^[a-z0-9].*[^_-]$/, 'Team URL cannot start or end with dashes or underscores.')
-  .regex(/^(?!.*[-_]{2})/, 'Team URL cannot contain consecutive dashes or underscores.')
+  .regex(/^[a-z0-9].*[^_-]$/, 'La URL del equipo no puede comenzar ni terminar con guiones ni guiones bajos.')
+  .regex(/^(?!.*[-_]{2})/, 'La URL del equipo no puede contener guiones ni guiones bajos consecutivos.')
   .regex(
     /^[a-z0-9]+(?:[-_][a-z0-9]+)*$/,
-    'Team URL can only contain letters, numbers, dashes and underscores.',
+    'La URL del equipo solo puede contener letras, números, guiones y guiones bajos.',
   )
   .refine((value) => !PROTECTED_TEAM_URLS.includes(value), {
-    message: 'This URL is already in use.',
+    message: 'Esta URL ya está en uso.',
   });
 
 export const ZTeamNameSchema = z
   .string()
   .trim()
-  .min(3, { message: 'Team name must be at least 3 characters long.' })
-  .max(30, { message: 'Team name must not exceed 30 characters.' });
+  .min(3, { message: 'El nombre del equipo debe tener al menos 3 caracteres.' })
+  .max(30, { message: 'El nombre del equipo no debe exceder los 30 caracteres.' });
 
 export const ZAcceptTeamInvitationMutationSchema = z.object({
   teamId: z.number(),
@@ -62,8 +62,8 @@ export const ZCreateTeamMutationSchema = z.object({
 
 export const ZCreateTeamEmailVerificationMutationSchema = z.object({
   teamId: z.number(),
-  name: z.string().trim().min(1, { message: 'Please enter a valid name.' }),
-  email: z.string().trim().email().toLowerCase().min(1, 'Please enter a valid email.'),
+  name: z.string().trim().min(1, { message: 'Por favor ingrese un nombre valido.' }),
+  email: z.string().trim().email().toLowerCase().min(1, 'Por favor introduzca una dirección de correo electrónico válida.'),
 });
 
 export const ZCreateTeamMemberInvitesMutationSchema = z.object({

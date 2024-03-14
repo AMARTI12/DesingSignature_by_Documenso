@@ -11,7 +11,7 @@ export const DocumentPendingEmailTemplate = ({
   documentName = 'Open Source Pledge.pdf',
   assetBaseUrl = 'http://localhost:3002',
 }: DocumentPendingEmailTemplateProps) => {
-  const previewText = `Pending Document`;
+  const previewText = `Documento pendiente`;
 
   const getAssetUrl = (path: string) => {
     return new URL(path, assetBaseUrl).toString();

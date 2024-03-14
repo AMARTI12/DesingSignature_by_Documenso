@@ -37,7 +37,7 @@ export const DocumentDropzone = ({
   onDrop,
   onDropRejected,
   disabled,
-  disabledMessage = 'You cannot upload documents at this time.',
+  disabledMessage = 'No puede cargar documentos en este momento.',
   type = 'document',
   ...props
 }: DocumentDropzoneProps) => {

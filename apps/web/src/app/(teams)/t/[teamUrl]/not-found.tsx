@@ -22,7 +22,7 @@ export default function NotFound() {
           <Button asChild className="w-32">
             <Link href="/settings/teams">
               <ChevronLeft className="mr-2 h-4 w-4" />
-              Go Back
+              Ir atras
             </Link>
           </Button>
         </div>

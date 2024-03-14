@@ -24,11 +24,11 @@ export const sendConfirmationToken = async ({
   });
 
   if (!user) {
-    throw new Error('User not found');
+    throw new Error('Usuario no encontrado');
   }
 
   if (user.emailVerified) {
-    throw new Error('Email verified');
+    throw new Error('Email Verificado');
   }
 
   const mostRecentToken = await getMostRecentVerificationTokenByUserId({ userId: user.id });
@@ -56,7 +56,7 @@ export const sendConfirmationToken = async ({
   });
 
   if (!createdToken) {
-    throw new Error(`Failed to create the verification token`);
+    throw new Error(`No se pudo crear el token de verificación`);
   }
 
   try {
@@ -64,6 +64,6 @@ export const sendConfirmationToken = async ({
 
     return { success: true };
   } catch (err) {
-    throw new Error(`Failed to send the confirmation email`);
+    throw new Error(`No se pudo enviar el correo electrónico de confirmación`);
   }
 };
