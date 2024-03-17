@@ -120,8 +120,8 @@ export const AddSignersFormPartial = ({
 
     if (hasBeenSentToRecipientId(signer.nativeId)) {
       toast({
-        title: 'Cannot remove signer',
-        description: 'This signer has already received the document.',
+        title: 'No se puede quitar el firmante',
+        description: 'Este firmante ya recibió el documento.',
         variant: 'destructive',
       });
 
@@ -179,7 +179,7 @@ export const AddSignersFormPartial = ({
                 </div>
 
                 <div className="flex-1">
-                  <Label htmlFor={`signer-${signer.id}-name`}>Name</Label>
+                  <Label htmlFor={`signer-${signer.id}-name`}>Nombre</Label>
 
                   <Controller
                     control={control}
@@ -209,28 +209,28 @@ export const AddSignersFormPartial = ({
                           <SelectItem value={RecipientRole.SIGNER}>
                             <div className="flex items-center">
                               <span className="mr-2">{ROLE_ICONS[RecipientRole.SIGNER]}</span>
-                              Signer
+                              Firmante
                             </div>
                           </SelectItem>
 
                           <SelectItem value={RecipientRole.CC}>
                             <div className="flex items-center">
                               <span className="mr-2">{ROLE_ICONS[RecipientRole.CC]}</span>
-                              Receives copy
+                              Receptor de Copia
                             </div>
                           </SelectItem>
 
                           <SelectItem value={RecipientRole.APPROVER}>
                             <div className="flex items-center">
                               <span className="mr-2">{ROLE_ICONS[RecipientRole.APPROVER]}</span>
-                              Approver
+                              Aprovador
                             </div>
                           </SelectItem>
 
                           <SelectItem value={RecipientRole.VIEWER}>
                             <div className="flex items-center">
                               <span className="mr-2">{ROLE_ICONS[RecipientRole.VIEWER]}</span>
-                              Viewer
+                              Visualizador
                             </div>
                           </SelectItem>
                         </SelectContent>
@@ -276,7 +276,7 @@ export const AddSignersFormPartial = ({
             onClick={() => onAddSigner()}
           >
             <Plus className="-ml-1 mr-2 h-5 w-5" />
-            Add Signer
+            Agregar Firmante
           </Button>
         </div>
       </DocumentFlowFormContainerContent>

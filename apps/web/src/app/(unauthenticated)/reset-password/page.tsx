@@ -4,22 +4,22 @@ import Link from 'next/link';
 import { Button } from '@documenso/ui/primitives/button';
 
 export const metadata: Metadata = {
-  title: 'Reset Password',
+  title: 'Resetear Contraseña',
 };
 
 export default function ResetPasswordPage() {
   return (
     <div className="w-screen max-w-lg px-4">
       <div className="w-full">
-        <h1 className="text-3xl font-semibold">Unable to reset password</h1>
+        <h1 className="text-3xl font-semibold">No se puede restablecer la contraseña</h1>
 
         <p className="text-muted-foreground mt-2 text-sm">
-          The token you have used to reset your password is either expired or it never existed. If
-          you have still forgotten your password, please request a new reset link.
+        El token que utilizó para restablecer su contraseña expiró o nunca existió. 
+        Si aún olvidó su contraseña, solicite un nuevo enlace de restablecimiento.
         </p>
 
         <Button className="mt-4" asChild>
-          <Link href="/signin">Return to sign in</Link>
+          <Link href="/signin">Volver para iniciar sesión</Link>
         </Button>
       </div>
     </div>

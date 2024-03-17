@@ -134,7 +134,7 @@ export const MenuSwitcher = ({ user, teams: initialTeamsData }: MenuSwitcherProp
 
             <DropdownMenuLabel>
               <div className="flex flex-row items-center justify-between">
-                <p>Teams</p>
+                <p>Equipos</p>
 
                 <div className="flex flex-row space-x-2">
                   <DropdownMenuItem asChild>
@@ -191,7 +191,7 @@ export const MenuSwitcher = ({ user, teams: initialTeamsData }: MenuSwitcherProp
               href="/settings/teams?action=add-team"
               className="flex items-center justify-between"
             >
-              Create team
+              Crear Equipo
               <Plus className="ml-2 h-4 w-4" />
             </Link>
           </DropdownMenuItem>
@@ -201,18 +201,18 @@ export const MenuSwitcher = ({ user, teams: initialTeamsData }: MenuSwitcherProp
 
         {isUserAdmin && (
           <DropdownMenuItem className="text-muted-foreground px-4 py-2" asChild>
-            <Link href="/admin">Admin panel</Link>
+            <Link href="/admin">Panel de administrador</Link>
           </DropdownMenuItem>
         )}
 
         <DropdownMenuItem className="text-muted-foreground px-4 py-2" asChild>
-          <Link href="/settings/profile">User settings</Link>
+          <Link href="/settings/profile">Configuraciones de usuario</Link>
         </DropdownMenuItem>
 
         {selectedTeam &&
           canExecuteTeamAction('MANAGE_TEAM', selectedTeam.currentTeamMember.role) && (
             <DropdownMenuItem className="text-muted-foreground px-4 py-2" asChild>
-              <Link href={`/t/${selectedTeam.url}/settings/`}>Team settings</Link>
+              <Link href={`/t/${selectedTeam.url}/settings/`}>Configuraciones de Equipo</Link>
             </DropdownMenuItem>
           )}
 
@@ -224,7 +224,7 @@ export const MenuSwitcher = ({ user, teams: initialTeamsData }: MenuSwitcherProp
             })
           }
         >
-          Sign Out
+          Cerrar Sesión
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
