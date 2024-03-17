@@ -65,7 +65,7 @@ export function DataTablePagination<TData>({
       </div>
       <div className="flex flex-wrap items-center gap-x-6 gap-y-4 lg:gap-x-8">
         <div className="flex items-center text-sm font-medium md:justify-center">
-          Pagina {table.getState().pagination.pageIndex + 1} de {table.getPageCount()}
+          Page {table.getState().pagination.pageIndex + 1} de {table.getPageCount() || 1}
         </div>
 
         <div className="flex items-center gap-x-2">
